@@ -19,6 +19,26 @@ for (i = 2; i <= 4; i++)
     tabuleiro[i][1] = 3;
 }
 
+// adicionando diagonal #######
+int linInicial = 2;
+int colInicial = 6;
+
+for (i = 0; i < 3; i++)
+{
+    tabuleiro[linInicial + i][colInicial + i] = 3;
+}
+
+// adicionando diagonal inversa #######
+int linInicialInv = 7; 
+int colInicialInv = 2; 
+
+for (i = 0; i < 3; i++)
+{
+    tabuleiro[linInicialInv + i][colInicialInv - i] = 3;
+}
+
+
+
 
 //cabeçalho de letras #############
 printf("   ");
@@ -29,6 +49,8 @@ for (i=0; i<10; i++)
 }
 printf("\n");
 
+
+
 //numeros e o tabuleiro ############
  for (int i = 0; i < 10; i++) {
         printf("%02d ", (i + 1));
@@ -38,5 +60,6 @@ printf("\n");
         printf("\n");
     }
 
+proximo codigo por favor verificar se o navio cabe
 
 }
