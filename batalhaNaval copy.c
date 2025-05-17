@@ -7,40 +7,60 @@ int main(){
     int tabuleiro[10][10]={0};
 
 
-// adicionando verticalmente #######
-for (i = 4; i <= 6; i++)
-{
-    tabuleiro[7][i] = 3;
+// adicionando horizontalmente #######
+
+int linHorizontal = 8;          //linha inde estará o navio
+int colHorizontalInicial = 4;   //primeira casa do navio
+
+if (colHorizontalInicial >= 8){
+    printf("O navio não cabe na linha!\n");
+} else {
+    for (i = colHorizontalInicial; i <= (colHorizontalInicial) + 2; i++){
+    tabuleiro[linHorizontal][i] = 3;
+    }
 }
 
-// adicionando horizontalmente #######
-for (i = 2; i <= 4; i++)
-{
-    tabuleiro[i][1] = 3;
+// adicionando verticalmente #######
+
+int colVertical = 1;          //coluna onde estará o navio
+int linVerticalInicial = 2;   //primeira casa do navio
+
+if (linVerticalInicial >= 8){
+    printf("O navio não cabe na coluna!");
+} else {
+    for (i = linVerticalInicial; i <= (linVerticalInicial + 2); i++){
+    tabuleiro[i][colVertical] = 3;
+    }
 }
+
 
 // adicionando diagonal #######
-int linInicial = 2;
-int colInicial = 6;
+int linInicialDiagonal = 1;         //primera linha diagonal, de cima para baixo
+int colInicialDiagonal = 5;         //primeira coluna diagonal, da esquerda para a direita
 
-for (i = 0; i < 3; i++)
-{
-    tabuleiro[linInicial + i][colInicial + i] = 3;
+if (linInicialDiagonal >= 8 || colInicialDiagonal >= 8){
+    printf("O navio da diagonal não cabe!\n");
+} else {
+    for (i = 0; i < 3; i++){
+    tabuleiro[linInicialDiagonal + i][colInicialDiagonal + i] = 3;
+    }
 }
+
 
 // adicionando diagonal inversa #######
-int linInicialInv = 7; 
-int colInicialInv = 2; 
+int colInicialDiagonalInv = 1;       //primeira coluna diagonal, da esqueda para a direita
+int linInicialDiagonalInv = 7;       //primeira casa diagonal, de cima pra baixo
 
-for (i = 0; i < 3; i++)
-{
-    tabuleiro[linInicialInv + i][colInicialInv - i] = 3;
+if (colInicialDiagonalInv <= 1 || linInicialDiagonalInv >= 8){
+    printf("O navio da diagonal inversa não cabe!\n");
+} else {
+    for (i = 0; i < 3; i++){
+    tabuleiro[linInicialDiagonalInv + i][colInicialDiagonalInv - i] = 3;
+    }
 }
 
 
-
-
-//cabeçalho de letras #############
+//cabeçalho de letras #######
 printf("   ");
 
 for (i=0; i<10; i++)
@@ -51,7 +71,7 @@ printf("\n");
 
 
 
-//numeros e o tabuleiro ############
+//numeros e o tabuleiro #######
  for (int i = 0; i < 10; i++) {
         printf("%02d ", (i + 1));
         for (int j = 0; j < 10; j++) {
@@ -60,6 +80,6 @@ printf("\n");
         printf("\n");
     }
 
-proximo codigo por favor verificar se o navio cabe
+
 
 }
