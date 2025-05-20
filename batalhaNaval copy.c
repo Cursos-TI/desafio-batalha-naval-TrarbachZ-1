@@ -10,8 +10,8 @@ int main(){
 
 // adicionando horizontalmente #######
 
-int linHorizontal = 8;          //linha inde estará o navio
-int colHorizontalInicial = 4;   //primeira casa do navio
+int linHorizontal = 4;          //linha inde estará o navio
+int colHorizontalInicial = 2;   //primeira casa do navio
 
 if (colHorizontalInicial >= 8){
     printf("O navio horizontal não cabe na linha\n");
@@ -38,8 +38,8 @@ if (sobrepoe){
 
 // adicionando verticalmente #######
 
-int colVertical = 1;          //coluna onde estará o navio
-int linVerticalInicial = 2;   //primeira casa do navio
+int colVertical = 0;          //coluna onde estará o navio
+int linVerticalInicial = 0;   //primeira casa do navio
 
 if (linVerticalInicial >= 8){
     printf("O navio vertical não cabe na coluna!");
@@ -63,8 +63,8 @@ if (sobrepoe)
 }
 
 // adicionando diagonal #######
-int linInicialDiagonal = 1;         //primera linha diagonal, de cima para baixo
-int colInicialDiagonal = 5;         //primeira coluna diagonal, da esquerda para a direita
+int linInicialDiagonal = 0;         //primera linha diagonal, de cima para baixo
+int colInicialDiagonal = 2;         //primeira coluna diagonal, da esquerda para a direita
 
 if (linInicialDiagonal >= 8 || colInicialDiagonal >= 8){
     printf("O navio da diagonal não cabe!\n");
@@ -89,8 +89,8 @@ if (sobrepoe)
 
 
 // adicionando diagonal inversa #######
-int colInicialDiagonalInv = 2;       //primeira coluna diagonal, da esquerda para a direita
-int linInicialDiagonalInv = 7;       //primeira casa diagonal, de cima pra baixo
+int colInicialDiagonalInv = 2;       //primeira coluna diagonal, da direita para a esquerda
+int linInicialDiagonalInv = 2;       //primeira casa diagonal, de cima pra baixo
 
 if (colInicialDiagonalInv <= 1 || linInicialDiagonalInv >= 8){
     printf("O navio da diagonal inversa não cabe!\n");
@@ -116,9 +116,7 @@ if (sobrepoe)
 
 //cabeçalho de letras #######
 printf("   ");
-
-for (i=0; i<10; i++)
-{
+for (i=0; i<10; i++){
     printf("%c ", linha[i]);
 }
 printf("\n");
